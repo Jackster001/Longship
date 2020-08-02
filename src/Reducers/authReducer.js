@@ -3,7 +3,8 @@ import isEmpty from '../validation/is-empty';
 const initialState = {
     isAuthenticated: false,
     user: {},
-    token: ""
+    token: "",
+    loginError:false
 }
 
 export default function(state= initialState, action){
@@ -12,7 +13,13 @@ export default function(state= initialState, action){
             return{
                 ...state,
                 isAuthenticated: !isEmpty(action.payload),
-                user: action.payload
+                user: action.payload,
+                loginError:false
+            }
+        case "LOGIN_ERROR":
+            return{
+                ...state,
+                loginError:true
             }
         default:
             return state;

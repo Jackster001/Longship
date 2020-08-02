@@ -5,7 +5,7 @@ class Profile extends Component {
     return (
       <div className="profileContainer">
         <center><h1>Profile Screen</h1></center>
-        <div class="profileTop">
+        <div className="profileTop">
           <div className="profileImage">
             <img className="profileImageSrc" src="https://static.thenounproject.com/png/538846-200.png"/>
           </div>

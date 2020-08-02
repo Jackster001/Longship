@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router style='height:100%'>
+        <Router >
           <div className="app">
             <Navigation/>
             <div className={localStorage.jwtToken ? "rightScreen":""}>

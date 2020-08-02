@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loginUser } from '../Action/sessionAction';
+import * as routes from '../Routes/routes';
 
 class Login extends Component {
     constructor(props) {
@@ -41,10 +43,11 @@ class Login extends Component {
 
     render() {
         return (
+          <div className="signInContainer">
             <div className="signInForm">
-                <div className="topForm">
-                    <center><h2>Login</h2></center>
-                </div>
+                <center><h1 className="SignInandSignUpTitle">Longship</h1></center>
+                <hr/>
+                <center><h2>Sign into Account</h2></center>
                 <form onSubmit={(e)=>this.onSubmit(e)}>
                     <input 
                         type="email"
@@ -60,19 +63,21 @@ class Login extends Component {
                         onChange={this.handleInputChange}
                         required
                     />
+                    {this.props.loginError ? <center><p className="errorTexts">Incorrect Email or Password</p></center>:[]}
                     <center><button className='submitButton'>Login</button></center>
                 </form>
                 <center>
                 <br/><br/>
-                <p>Don't have an account? Sign Up</p></center>
+                <p>Don't have an account? <Link to={routes.SIGNUP}>Sign Up</Link></p></center>
             </div>
+          </div>
         );
     }
 }
 
 const mapStateToProps =(state) =>({
   isAuthenticated: state.authState.isAuthenticated,
-  errors: state.errors
+  loginError: state.authState.loginError
 })
 
 export default connect(mapStateToProps, {loginUser})(Login);

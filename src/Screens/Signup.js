@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { registerUser } from '../Action/sessionAction';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom'
+import * as routes from '../Routes/routes';
 
 class SignUp extends Component {
     constructor() {
@@ -41,10 +43,11 @@ class SignUp extends Component {
     }
     render() {
         return (
+        <div className="signUpContainer">
             <div className="signupForm">
-                <div className="topForm">
-                    <center><h2>Create an Account</h2></center>
-                </div>
+                <center><h1 className="SignInandSignUpTitle">Longship</h1></center>
+                <hr/>
+                <center><h2 className="">Create an Account</h2></center>
                 <form onSubmit={(e)=>this.onSubmit(e)}>
                     <input 
                         type='firstName'
@@ -78,8 +81,9 @@ class SignUp extends Component {
                 </form>
                 <center>
                 <br/><br/>
-                <p>Already have an account? Login</p></center>
+                <p>Already have an account? <Link to={routes.LOGIN}>Login</Link></p></center>
             </div>
+        </div>
     );
   }
 }

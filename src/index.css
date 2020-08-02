@@ -12,6 +12,7 @@ body {
 }
 html{
   width: 100%;
+  min-height: 100% !important;
   height: 100%;
 }
 .app{
@@ -84,41 +85,80 @@ code {
   margin-left: 3%;
 }
 .navigation{
-  display: inline-block;
-  background-color: #e1d9ff;
+  background-color: #ae6dd6;
   /* background-color: #f5f5f5; */
-  width:150px;
-  height: 97%;
+  min-width: 250px;
+  max-width:300px;
+  height: 100%;
   position: absolute;
-  padding-right: 20px;
-  padding-left: 15px;
-  border-radius: 0px 20px 20px 0px;
-  margin-top: 1.1%;
+}
+.navBar{
+  height:auto;
+  max-width: 500px;
+}
+.navigationProfileImage{
+  width:50%;
+  display: block;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 100%;
 }
 .rightScreen{
-  width:87.5%;
+  width:100%;
   height: 100%; 
   display: inline-block;
-  margin-left: 13%;
 }
 .navigationList{
   list-style-type: none;
   padding-inline-start: 0px;
+  margin-top: 50px;
+  margin-left:12px;
 }
+
 .navigationList>li{
   padding-top:10px;
   padding-bottom: 10px;
+  margin: 15px 0px;
+}
+/* .navigationList>li:hover{
+  background-color: #ddb7eb;
+  cursor: pointer;
+} */
+.iconsStyle{
+  margin-bottom: -3px;
+  margin-right: 5px
+}
+.signintitle{
+  color:black;
+  position: absolute;
+  font-size: 150px;
 }
 .signupForm{
-  padding-bottom:20px;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.8);
   margin-right: auto;
   margin-left: auto;
   position: absolute;
-  top:25%;
-  left:45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 20px;
-  width: 390px;
+  width: 400px;
+}
+.signInContainer{
+  width:100%;
+  height:100%;
+  position: absolute;
+  background: url('./assets/dock.jpg') no-repeat center center;
+  background-size: cover;
+}
+.signUpContainer{
+  width:100%;
+  height:100%;
+  position: absolute;
+  background: url('./assets/dock.jpg') no-repeat center center;
+  background-size: cover;
+
 }
 .signupForm>form{
   width:70%;
@@ -139,14 +179,16 @@ code {
   outline:none;
 }
 .signInForm{
-  padding-bottom:20px;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.8);
   margin-right: auto;
   margin-left: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 20px;
+  min-width: 400px;
 }
 .signInForm>form{
   width:70%;
@@ -166,17 +208,8 @@ code {
   font-size: 15px;
   outline:none;
 }
-.topForm{
-  width:100%;
-  background-color: #9358B7;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  height: 10%;
-  margin-top: -17px;
-}
-.topForm>center>h2{
-  padding:25px;
-  color: white;
+.SignInandSignUpTitle{
+  color:purple;
 }
 .submitButton{
   width:70%;
@@ -194,17 +227,27 @@ code {
 .links{
   text-decoration: none;
   color:black;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding:5px 10px;
+  /* background-color: #ddb7eb; */
+  color:white;
+  border-radius: 10px;
+  width:100%;
+  font-size: 20px;
+  width:100%;
+  height:50px;
+  /* border:2px solid #ddb7eb; */
 }
-.links:hover{
+.links:active{
+  border:2px solid #ddb7eb;
+}
+/* .links:hover{
   background-color: #ddb7eb;
   border-radius: 10px;
   padding-left: 5%;
   padding-right: 5%;
   height: 50px;
   color:white
-}
+} */
 .pageTitle{
   font-size: 50px;
   color: black;
@@ -266,10 +309,14 @@ code {
 .friendBox{
   background-color: white;
   height: 30%;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding: 2px;
   border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  left:12px;
 }
 .friendItem{
   display: flex;
@@ -296,7 +343,6 @@ code {
   align-self: center;
   width: 100%;
   margin-left: 20px;
-  margin-top: 5px;
 }
 .friendBoxTitle{
   font-size: 20px;
@@ -314,7 +360,7 @@ code {
   cursor: pointer;
 }
 .friendBoxScrollView{
-  height: 50%;
+  height: 70%;
   width: 100%;
   overflow-y: auto
 }
@@ -481,11 +527,6 @@ code {
   margin:0 auto;
   margin-top:20px;
 }
-.navigationProfileImage{
-  width:90%;
-  display: block;
-  margin-top: 20px;
-}
 .editProfileButton{
   border:none;
   font-size: 14px;
@@ -501,9 +542,6 @@ code {
   color: white;
   cursor: pointer;
 }
-.navBar{
-  height:90%;
-}
 .profileTop{
   width:100%
 }
@@ -512,4 +550,26 @@ code {
 }
 .profileImageSrc{
   width:100%
+}
+.errorTexts{
+  color:red
+}
+.dropContainer{
+  width: 100%;
+  height:15px;
+  display: block;
+}
+.collapseIcon{
+  float: right;
+  margin: 5px;
+  cursor: pointer;
+}
+.collapsedNavigation{
+  width: 50px;
+  height:1000px;
+  background-color: #ae6dd6;
+  /* background-color: #f5f5f5; */
+  height: 100%;
+  position: absolute;
+  transition: width 2s;
 }

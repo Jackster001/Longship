@@ -33,12 +33,11 @@ export const loginUser =(userData)=> dispatch =>{
         //decode token to get user data
         const decoded =jwt_decode(token);
         dispatch(setCurrentUser(decoded));
-    }).catch(err=> 
-        console.log(err)
-        // dispatch({
-
-        // })    
-    );
+    }).catch(err=>{
+        dispatch({
+            type:"LOGIN_ERROR"
+        })    
+    });
 };
 
 //set logged in user
