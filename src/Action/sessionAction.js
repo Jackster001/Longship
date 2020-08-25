@@ -5,8 +5,8 @@ const server = "https://blooming-temple-81335.herokuapp.com";
 
 export const registerUser=  (userData, history)=> async dispatch=>{
     try{
-        const user = await axios.post('http://localhost:8080/api/users/register', userData)
-        // const user = await axios.post('https://blooming-temple-81335.herokuapp.com/api/users/register', userData)
+        // const user = await axios.post('http://localhost:8080/api/users/register', userData)
+        const user = await axios.post('https://blooming-temple-81335.herokuapp.com/api/users/register', userData)
         const profileInfo = {id: user.data._id, firstName: userData.firstName, lastName: userData.lastName}
         await axios.post('http://localhost:8080/api/profile/create', profileInfo)
         // await axios.post('https://blooming-temple-81335.herokuapp.com/api/profile/create', profileInfo)
@@ -20,8 +20,8 @@ export const registerUser=  (userData, history)=> async dispatch=>{
 
 //login token
 export const loginUser =(userData)=> dispatch =>{
-    // axios.post('https://blooming-temple-81335.herokuapp.com/api/users/login', userData)
-    axios.post('http://localhost:8080/api/users/login', userData)
+    axios.post('https://blooming-temple-81335.herokuapp.com/api/users/login', userData)
+    // axios.post('http://localhost:8080/api/users/login', userData)
     .then(res =>{
         //save to local storage
         const{token}= res.data;

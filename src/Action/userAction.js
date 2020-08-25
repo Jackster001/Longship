@@ -4,7 +4,7 @@ const dev= "http://localhost:8080";
 
 export const findUsers = (name, id)=> async dispatch=>{
     try{
-        const users = await axios.post(`${dev}/api/users/findusers`, {name, id});
+        const users = await axios.post(`${server}/api/users/findusers`, {name, id});
         dispatch({
             type: "FOUND_USERS",
             payload: users.data
