@@ -7,11 +7,11 @@ import { FriendBox, FriendList } from '../Components/index'
 import { FaHome, FaUserFriends, FaBell } from 'react-icons/fa';
 import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle} from 'react-icons/io'
 
-class Navigation extends Component{
+class NavigationAlternative extends Component{
     constructor(props){
         super(props)
         this.state={
-            navigationType:"collapsedNavigation"
+            navigationType:"navigation"
         }
     }
     authLinks(){
@@ -20,12 +20,10 @@ class Navigation extends Component{
             <div className="dropContainer">
                 <IoIosArrowDropleftCircle className="collapseIcon" size="25" onClick={()=>this.toggleNavigation()}/>
             </div>
-            <div className="NavigationTop">
-                <center>
-                    <img className="navigationProfileImage" src="https://static.thenounproject.com/png/538846-200.png"/>
-                    <Link to={routes.PROFILE}><button className="editProfileButton">Edit Profile</button></Link>
-                </center>
-            </div>
+            <center>
+                <img className="navigationProfileImage" src="https://static.thenounproject.com/png/538846-200.png"/>
+                <Link to={routes.PROFILE}><button className="editProfileButton">Edit Profile</button></Link>
+            </center>
             <ul className='navigationList'>
                 <li><Link className='links' to={routes.HOME}><FaHome className="iconsStyle"/>Home</Link></li>
                 {/* <li><Link className='links' to={routes.CHATROOM}>Chat</Link></li> */}
@@ -42,7 +40,7 @@ class Navigation extends Component{
         return(
         <div className="collapsedNavbar">
             <div className="collapsedDropContainer">
-                <IoIosArrowDroprightCircle className="collapseOpenIcon" size="25" onClick={()=>this.toggleNavigation()}/>
+                <IoIosArrowDroprightCircle className="collapseIcon" size="25" onClick={()=>this.toggleNavigation()}/>
             </div>
             <ul className='collapseNavigationList'>
                 {/* <li><Link className='links' to={routes.HOME}><FaHome className="iconsStyle"/>Home</Link></li>
@@ -71,12 +69,15 @@ class Navigation extends Component{
             </div>
         );
     }
+
+
 }
+
 
 const mapStateToProps =(state) =>({
     isAuthenticated: state.authState.isAuthenticated
 })
   
-export default connect(mapStateToProps, {logoutUser})(Navigation);
+export default connect(mapStateToProps, {logoutUser})(NavigationAlternative);
   
 

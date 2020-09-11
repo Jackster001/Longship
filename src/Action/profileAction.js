@@ -5,7 +5,8 @@ const dev= "http://localhost:8080";
 
 export const getProfile = (id) => async (dispatch)=> {
     try{
-        const profile= await axios.get(`${server}/api/profile/${id}`, 
+        // const profile= await axios.get(`${server}/api/profile/${id}`,
+        const profile= await axios.get(`${dev}/api/profile/${id}`, 
         {headers:{'Authorization':localStorage.jwtToken}});
         // const profile= await axios.get(`/api/profile/${id}`);
         await dispatch({

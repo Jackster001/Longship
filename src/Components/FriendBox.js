@@ -12,13 +12,13 @@ class FriendBox extends Component{
     }
     componentDidMount(){
         this.props.getProfile(this.props.user.id)
-      }
-      componentDidUpdate(){
+    }
+    componentDidUpdate(){
         if(this.props.profileLoading){
           this.props.setProfileLoading()
           this.setState({...this.state,friends: this.props.friends})
         }
-      }
+    }
     render(){
         return (
             <div className="friendBox">

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,11 +10,14 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 html{
   width: 100%;
-  min-height: 100% !important;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .app{
   width: 100%;
@@ -28,9 +32,6 @@ code {
   width: 90%;
   background-color: #E9E8FF;
   margin: auto;
-}
-.body{
-  background-color: #E9E8FF;
 }
 .card-title{
   padding: 10px;
@@ -84,46 +85,6 @@ code {
   width: 41%;
   margin-left: 3%;
 }
-.navigation{
-  background-color: #ae6dd6;
-  /* background-color: #f5f5f5; */
-  min-width: 250px;
-  max-width:300px;
-  height: 100%;
-  position: absolute;
-}
-.navBar{
-  height:auto;
-  max-width: 500px;
-}
-.navigationProfileImage{
-  width:50%;
-  display: block;
-  margin-top: 20px;
-  background-color: white;
-  border-radius: 100%;
-}
-.rightScreen{
-  width:100%;
-  height: 100%; 
-  display: inline-block;
-}
-.navigationList{
-  list-style-type: none;
-  padding-inline-start: 0px;
-  margin-top: 50px;
-  margin-left:12px;
-}
-
-.navigationList>li{
-  padding-top:10px;
-  padding-bottom: 10px;
-  margin: 15px 0px;
-}
-/* .navigationList>li:hover{
-  background-color: #ddb7eb;
-  cursor: pointer;
-} */
 .iconsStyle{
   margin-bottom: -3px;
   margin-right: 5px
@@ -224,30 +185,6 @@ code {
   margin-top: 20px;
   cursor: pointer;
 }
-.links{
-  text-decoration: none;
-  color:black;
-  padding:5px 10px;
-  /* background-color: #ddb7eb; */
-  color:white;
-  border-radius: 10px;
-  width:100%;
-  font-size: 20px;
-  width:100%;
-  height:50px;
-  /* border:2px solid #ddb7eb; */
-}
-.links:active{
-  border:2px solid #ddb7eb;
-}
-/* .links:hover{
-  background-color: #ddb7eb;
-  border-radius: 10px;
-  padding-left: 5%;
-  padding-right: 5%;
-  height: 50px;
-  color:white
-} */
 .pageTitle{
   font-size: 50px;
   color: black;
@@ -294,13 +231,15 @@ code {
 }
 .friendContainer{
   background-color: #f5f5f5;
-  height: 50%;
-  width: 30%;
+  min-height: 500px;
+  max-height: 500px;
+  width: 80%;
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
   padding: 20px;
+  margin-bottom: 100px;
 }
 .friendPage{
   height: 500px;
@@ -316,7 +255,7 @@ code {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
-  left:12px;
+  left:12px; 
 }
 .friendItem{
   display: flex;
@@ -353,10 +292,10 @@ code {
   float: right;
   margin-top: -10px;
   margin-right: 5px;
-  color: #ae6dd6;
+  color: #3a5563;
 }
 .userAddIcon:hover{
-  color: #9358B7;
+  color: #5b7d8f;
   cursor: pointer;
 }
 .friendBoxScrollView{
@@ -394,7 +333,7 @@ code {
 .chatHeader{
   width: 100%;
   height: 50px;
-  background-color: #a56abd;
+  /* background-color: #a56abd; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   position: absolute;
@@ -496,7 +435,8 @@ code {
   height: auto;
   width: auto;
   max-width: 68%;
-  background-color: #9053a3;
+  /* background-color: #9053a3; */
+  background-color: #3a5563;
   float: right;
   margin-right: 5px;
   border-radius: 15px 0px 15px 15px;
@@ -554,22 +494,160 @@ code {
 .errorTexts{
   color:red
 }
+.collapsedNavigation{
+  width: 50px;
+  height:1000px;
+  background-color: rgba(0,0,0, 0.0);
+  height: 100%;
+  position: absolute;
+  transition: width 2s;
+}
+
+.navigation{
+  background-color: rgba(161, 94, 209, 0.95);
+  /* background-color: #a15ed1; */
+  /* background-color: #552657; */
+  min-width: 250px;
+  max-width:300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+.navBar{
+  height:auto;
+  max-width: 500px;
+}
+.rightScreen{
+  width:100%;
+  height: 100%; 
+  display: inline-block;
+}
+.navigationList{
+  list-style-type: none;
+  padding-inline-start: 0px;
+  margin-top: 50px;
+  margin-left:12px;
+}
+.navigationList>li{
+  padding-top:10px;
+  padding-bottom: 10px;
+  margin: 15px 0px;
+}
+.navigationList>li:hover{
+  /* background-color: #ddb7eb; */
+  cursor: pointer;
+}
 .dropContainer{
   width: 100%;
-  height:15px;
+  height:35px;
   display: block;
+  background-color: #f5f5f5;
+}
+.links{ 
+  text-decoration: none;
+  color:black;
+  padding:5px 10px;
+  /* background-color: #f5f5f5; */
+  color:white;
+  border-radius: 10px;
+  width:100%;
+  font-size: 20px;
+  width:100%;
+  height:50px;
+  /* border:2px solid #ddb7eb; */
+}
+.links:active{
+  border:2px solid #f5f5f5;
+}
+.links:hover{
+  /* background-color: #ddb7eb;
+  border-radius: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 50px;
+  color:white */
+}
+.NavigationTop{
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  display: block;
+  border-bottom-right-radius: 120px;
+  border-bottom-left-radius: 120px;
 }
 .collapseIcon{
   float: right;
   margin: 5px;
   cursor: pointer;
 }
-.collapsedNavigation{
-  width: 50px;
-  height:1000px;
-  background-color: #ae6dd6;
-  /* background-color: #f5f5f5; */
-  height: 100%;
-  position: absolute;
-  transition: width 2s;
+.collapseOpenIcon{
+  float: right;
+  margin: 5px;
+  position: fixed;
+  cursor: pointer;
+}
+.navigationProfileImage{
+  width:50%;
+  display: block;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 100%;
+}
+.search {
+  width: 100%;
+  /* position: relative; */
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 2px solid grey;
+  border-right: none;
+  padding: 5px;
+  height: 22px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 80px;
+  height: 36px;
+  border: 1px solid #a15ed1;
+  background: #a15ed1;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrapSearch{
+  width: 100%;
+  /* position: absolute; */
+  /* top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+.friendSearchTopContainer{
+  display: inline-flex;
+  width: 100%;
+}
+.friendTitleContainer{
+  width: 20%;
+  display: flex;
+}
+.friendSearchContainer{
+  width: 60%;
+  display: flex;
+  margin-top: 22px;
+}
+.friendToggleTitle{
+  cursor: pointer;
 }

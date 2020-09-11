@@ -38,7 +38,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router >
-          <div className="app">
             <Navigation/>
             <div className={localStorage.jwtToken ? "rightScreen":""}>
               <Route exact path={routes.SIGNUP} component={screens.Signup}/>
@@ -51,7 +50,6 @@ class App extends Component {
               <PrivateRoute exact path={routes.PROFILE} component={screens.Profile}/>
               <ChatBox/>
             </div>
-          </div>
         </Router>
       </Provider>
     );
